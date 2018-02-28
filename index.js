@@ -27,34 +27,6 @@ class KeystrokeRecorder {
     })
   }
 
-  replay (selector) {
-    var $element = $(selector)
-    this._renderText($element, '')
-
-    var json = this.json.slice(), replayChars = []
-    return new Promise((resolve, reject) => {
-      var timer = new Tock({
-        countdown: true,
-        interval: 10,
-        callback: () => {
-          var currentMs = this.timeElapsed() - timer.lap()
-          if (json[0] && currentMs > json[0].ms) {
-            let obj = json.shift()
-            switch(obj.key) {
-              case 'Backspace': replayChars.pop(); break
-              case 'Enter': replayChars.push('\n'); break
-              default: replayChars.push(obj.key); break
-            }
-            this._renderText($element, replayChars.join(''))
-          }
-        },
-        complete: resolve
-      })
-
-      timer.start(this.timeElapsed())
-    })
-  }
-
   load (json) {
     this.stop()
     this.json = json
