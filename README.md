@@ -24,13 +24,6 @@ $('#stop-btn').click(() => {
   console.log(keystrokeRecorder.json)
 })
 
-$('#replay-btn').click(() => {
-  keystrokeRecorder.replay('#replay-pad').then(() => {
-    console.log('done replaying!')
-  })
-})
-
-
 ```
 
 ## API
@@ -66,23 +59,15 @@ $('#replay-btn').click(() => {
   ```json
   [
       {
-          keyCode: 65,
-          key: "a",
           ms: 562
       },
       {
-          keyCode: 83,
-          key: "s",
           ms: 771
       },
       {
-          keyCode: 68,
-          key: "d",
           ms: 998
       },
       {
-          keyCode: 70,
-          key: "f",
           ms: 1642
       }
   ]
