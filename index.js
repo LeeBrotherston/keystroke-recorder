@@ -22,7 +22,7 @@ class KeystrokeRecorder {
     $(document).keydown(function (e) {
       if (!includes(self.omittedKeys, e.key)) {
         var ms = self.timeElapsed()
-        self.json.push({ keyCode: e.which, key: e.key, ms: ms })
+        self.json.push({ ms: ms })
       }
     })
   }
