@@ -52,14 +52,6 @@ $('#replay-btn').click(() => {
 
   stops collecting keystroke data
 
-- #### `replay(selector)`
-
-  replays recorded keystrokes in DOM element with specified selector. returns a promise that resolves on completion.
-
-- #### `load(json)`
-
-  stops recording and loads given json into keystrokeRecorder
-
 - #### `timeElapsed()`
 
   return milliseconds since recording started

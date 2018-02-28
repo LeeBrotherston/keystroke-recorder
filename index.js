@@ -27,12 +27,6 @@ class KeystrokeRecorder {
     })
   }
 
-  load (json) {
-    this.stop()
-    this.json = json
-    this.startTime = null
-  }
-
   timeElapsed () {
     if (this.recording) {
       return this.startTime ? Date.now() - this.startTime : 0
